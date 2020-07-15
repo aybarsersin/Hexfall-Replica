@@ -1,4 +1,0 @@
-#Tue Jul 14 21:40:41 AST 2020
-base.0=A\:\\281019_format\\020420_Desktop\\Vertigo\\Hexfall-Replica\\Temp\\gradleOut\\launcher\\build\\intermediates\\transforms\\dexMerger\\release\\0
-path.0=classes.dex
-renamed.0=classes.dex
