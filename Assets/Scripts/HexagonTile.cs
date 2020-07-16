@@ -11,7 +11,7 @@ public class HexagonTile : ConstantClass
     public Vector2 linearInterpolationCoordinate;
     public bool linearInterpolation;
     public Vector2 velocity;
-    public bool bombHexagon; //unused?
+    public bool bombHexagon;
     private int bombHexagonTimer;
     private TextMesh text;
 
