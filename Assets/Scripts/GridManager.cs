@@ -29,7 +29,7 @@ public class GridManager : ConstantClass
     private bool hexagonRotateStatus;
     private bool hexagonScoringStatus;
     private bool hexagonCreationStatus;
-    //private bool gameStartStatus;
+    private bool gameStartStatus;
 
     public void SettingGridWidth(int width)
     {
@@ -101,8 +101,9 @@ public class GridManager : ConstantClass
         {
             for (int m = 0; m < GettingGridHeight(); m++)
             {
-                gameGrid.Add(new List<HexagonTile>());
+                minusCells.Add(n);
             }
+            gameGrid.Add(new List<HexagonTile>());
         }
 
         StartCoroutine(CreateHexagons(minusCells, CreateGridWithColour()));
@@ -533,26 +534,26 @@ public class GridManager : ConstantClass
             yield return new WaitForSeconds(0.3f);
         }
 
-    } 
+    }
 
-    //private void PrintGameGrid() // gerekli mi değil mi ?
-    //{
-    //    string map = "";
+    private void PrintGameGrid() // gerekli mi değil mi ?
+    {
+        string map = "";
 
 
-    //    for (int i = GettingGridHeight() - 1; i >= 0; --i)
-    //    {
-    //        for (int j = 0; j < GettingGridWidth(); ++j)
-    //        {
-    //            if (gameGrid[j][i] == null)
-    //                map += "0 - ";
-    //            else
-    //                map += "1 - ";
-    //        }
+        for (int i = GettingGridHeight() - 1; i >= 0; --i)
+        {
+            for (int j = 0; j < GettingGridWidth(); ++j)
+            {
+                if (gameGrid[j][i] == null)
+                    map += "0 - ";
+                else
+                    map += "1 - ";
+            }
 
-    //        map += "\n";
-    //    }
+            map += "\n";
+        }
 
-    //    print(map);
-    //} 
+        print(map);
+    }
 }

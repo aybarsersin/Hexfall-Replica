@@ -244,7 +244,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 333751282}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 198085951}
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &333751282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +383,7 @@ GameObject:
   - component: {fileID: 906059367}
   - component: {fileID: 906059366}
   - component: {fileID: 906059369}
+  - component: {fileID: 906059370}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -453,6 +465,14 @@ Skybox:
   m_GameObject: {fileID: 906059365}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 0}
+--- !u!124 &906059370
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906059365}
+  m_Enabled: 1
 --- !u!1 &1275171254
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +645,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1534957914}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 198085951}
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Game
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1534957914
 MonoBehaviour:
   m_ObjectHideFlags: 0
