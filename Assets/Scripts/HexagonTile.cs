@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HexagonTile : ConstantClass
 {
@@ -23,12 +21,12 @@ public class HexagonTile : ConstantClass
         public Vector2 downLeft;
         public Vector2 upRight;
         public Vector2 downRight;
-    }
+    } 
 
     public void SettingHexagonX(int value)
     {
         coordinateX = value;
-    }
+    } 
 
     public void SettingHexagonY(int value)
     {
@@ -73,7 +71,6 @@ public class HexagonTile : ConstantClass
         linearInterpolation = false;
     }
 
-
     void Update()
     {
         if (linearInterpolation)
@@ -109,7 +106,7 @@ public class HexagonTile : ConstantClass
         return !(GetComponent<Rigidbody2D>().velocity == Vector2.zero);
     }
 
-    public void IsBombHexagonExploded()
+    public void IsBombHexagonScored()
     {
         GetComponent<Collider2D>().isTrigger = true;
     }
@@ -135,7 +132,7 @@ public class HexagonTile : ConstantClass
         linearInterpolation = true;
     }
 
-    public void ChangeHexagonGridPosition(Vector2 newCoordinate)
+    public void AlterHexagonGridPosition(Vector2 newCoordinate)
     {
         coordinateX = (int)newCoordinate.x;
         coordinateY = (int)newCoordinate.y;

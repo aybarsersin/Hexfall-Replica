@@ -29,7 +29,7 @@ public class GridManager : ConstantClass
     private bool hexagonRotateStatus;
     private bool hexagonScoringStatus;
     private bool hexagonCreationStatus;
-    private bool gameStartStatus;
+    //private bool gameStartStatus;
 
     public void SettingGridWidth(int width)
     {
@@ -123,19 +123,19 @@ public class GridManager : ConstantClass
 
         DestroyOutline();
         CreateOutline();
-    }//done bu ve bunun tamamen üstündekiler.
+    }
 
     public void RotateSelectionOutline(bool CW)
     {
         DestroyOutline();
         StartCoroutine(RotationCoroutine(CW));
-    } //done
+    } 
 
     public bool OnColumn(int n)
     {
         int middleColumnIndex = GettingGridWidth() / _half;
         return (middleColumnIndex % 2 == n % 2);
-    } //done
+    } 
 
     public bool ReadyForInput() // burayı kontrol edicez input almazsa.
     {
@@ -144,7 +144,7 @@ public class GridManager : ConstantClass
             return true;
         }
         return false;
-    } //done
+    } 
 
     private float CoordinateXOfFirstColumn()
     {
@@ -159,7 +159,7 @@ public class GridManager : ConstantClass
         }
 
         return false;
-    } //done
+    } 
 
     private IEnumerator CreateHexagons(List<int> columns, List<List<Color>> colourSeed = null)
     {
@@ -200,13 +200,13 @@ public class GridManager : ConstantClass
                 newHexagonTile.SettingHexagonColour(colourSeed[n][gameGrid[n].Count]);
             }
 
-            newHexagonTile.ChangeHexagonGridPosition(new Vector2(n, gameGrid[n].Count));
+            newHexagonTile.AlterHexagonGridPosition(new Vector2(n, gameGrid[n].Count));
             newHexagonTile.AlterWorldPosition(initialPosition);
             gameGrid[n].Add(newHexagonTile);
         }
 
         hexagonCreationStatus = false;
-    } //done
+    } 
 
     private List<List<Color>> CreateGridWithColour() //burayı da kontrol et!
     {
@@ -236,7 +236,7 @@ public class GridManager : ConstantClass
         }
 
         return colour;
-    } //done
+    } 
 
     private void FindHexagonTrio()
     {
@@ -251,7 +251,7 @@ public class GridManager : ConstantClass
         selectedTrio.Add(selectedHexagonTile);
         selectedTrio.Add(gameGrid[(int)firstPosition.x][(int)firstPosition.y].GetComponent<HexagonTile>());
         selectedTrio.Add(gameGrid[(int)secondPosition.x][(int)secondPosition.y].GetComponent<HexagonTile>());
-    }//done
+    }
 
     private void FindNeighbouringHexagonsofSelectedHexagon(out Vector2 first, out Vector2 second)
     {
@@ -283,7 +283,7 @@ public class GridManager : ConstantClass
             }
 
         } while (breakTheLoop);
-    } //done
+    } 
 
     private void DestroyOutline()
     {
@@ -294,7 +294,7 @@ public class GridManager : ConstantClass
                 Destroy(child.gameObject);
             }
         }
-    } //done
+    } 
 
     private void CreateOutline()
     {
@@ -321,7 +321,7 @@ public class GridManager : ConstantClass
             innerOutline.transform.localScale = obj.transform.localScale;
             innerOutline.transform.parent = outline.transform;
         }
-    } //done
+    } 
 
     private void TurnHexagons(bool CW)
     {
@@ -368,7 +368,7 @@ public class GridManager : ConstantClass
             third.Rotate(x2, y2, position2);
             gameGrid[x2][y2] = third;
         }
-    } //done
+    } 
 
     private List<HexagonTile> CheckScoringHexagons(List<List<HexagonTile>> checkList)
     {
@@ -439,7 +439,7 @@ public class GridManager : ConstantClass
             }
         }
         return scoringHexagonsList;
-    } //done
+    } 
 
     private List<int> ScoreHexagons(List<HexagonTile> list)
     {
@@ -482,18 +482,18 @@ public class GridManager : ConstantClass
                 coordinateY = (_verticalHexagonDistance * m * _double) + _verticalGridOffset + (OnColumn(n) ? _verticalHexagonDistance : _zero);
                 gameGrid[n][m].SettingHexagonX(n);
                 gameGrid[n][m].SettingHexagonY(m);
-                gameGrid[n][m].ChangeHexagonGridPosition(new Vector3(coordinateX, coordinateY, _zero));
+                gameGrid[n][m].AlterHexagonGridPosition(new Vector3(coordinateX, coordinateY, _zero));
             }
         }
 
         hexagonScoringStatus = false;
         return minusColumns;
-    } //done
+    } 
 
     private float GettingGridStartCoordinateX()
     {
         return gridWidth / _half * -_horizontalHexagonDistance;
-    } //done
+    } 
 
     private IEnumerator RotationCoroutine(bool CW)
     {
@@ -533,26 +533,26 @@ public class GridManager : ConstantClass
             yield return new WaitForSeconds(0.3f);
         }
 
-    } //done
+    } 
 
-    private void PrintGameGrid() // gerekli mi değil mi ?
-    {
-        string map = "";
+    //private void PrintGameGrid() // gerekli mi değil mi ?
+    //{
+    //    string map = "";
 
 
-        for (int i = GettingGridHeight() - 1; i >= 0; --i)
-        {
-            for (int j = 0; j < GettingGridWidth(); ++j)
-            {
-                if (gameGrid[j][i] == null)
-                    map += "0 - ";
-                else
-                    map += "1 - ";
-            }
+    //    for (int i = GettingGridHeight() - 1; i >= 0; --i)
+    //    {
+    //        for (int j = 0; j < GettingGridWidth(); ++j)
+    //        {
+    //            if (gameGrid[j][i] == null)
+    //                map += "0 - ";
+    //            else
+    //                map += "1 - ";
+    //        }
 
-            map += "\n";
-        }
+    //        map += "\n";
+    //    }
 
-        print(map);
-    } //done
+    //    print(map);
+    //} 
 }

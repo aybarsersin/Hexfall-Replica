@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -49,8 +48,6 @@ public class UIManager : ConstantClass
         InitializationOfUI();
     }
 
-
-
     void Update()
     {
         if (check)
@@ -60,7 +57,7 @@ public class UIManager : ConstantClass
         }
     }
 
-	public void Score(int n)
+    public void Score(int n)
     {
 		scoredHexagons += n;
 		scoreText.text = (_constantScore * scoredHexagons).ToString();//alt satırda daha güzel bir logic bulunabilir.
@@ -71,27 +68,27 @@ public class UIManager : ConstantClass
         }
     }
 
-	public void GameOver()
+    public void GameOver()
     {
 		gameOverScreen.SetActive(true);
     }
 
-	public void ReturnButton(string sceneName)
+    public void ReturnButton(string sceneName)
     {
 		SceneManager.LoadScene(sceneName);
     }
 
-	public void GridWidthSlider()
+    public void GridWidthSlider()
     {
 		gridWidthText.text = ((gridWidthSlider.value - _minGridWidth) * _double + _minGridWidth).ToString();
     }
 
-	public void GridHeightSlifer()
+    public void GridHeightSlider()
     {
 		gridHeightext.text = gridHeightSlider.value.ToString();
     }
 
-	public void ColourCountSlider()
+    public void ColourCountSlider()
     {
 		int childrenCount = colourSelectionParent.transform.childCount;
 		int newChildrenCount = (int)colourCountSlider.value;
