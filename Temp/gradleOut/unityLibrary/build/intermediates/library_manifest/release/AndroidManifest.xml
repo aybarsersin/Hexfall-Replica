@@ -10,10 +10,7 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="28" />
 
-    <uses-feature android:glEsVersion="0x00030000" />
-    <uses-feature
-        android:name="android.hardware.vulkan.version"
-        android:required="false" />
+    <uses-feature android:glEsVersion="0x00020000" />
     <uses-feature
         android:name="android.hardware.touchscreen"
         android:required="false" />
@@ -57,7 +54,7 @@
             android:value="portrait|landscape" />
         <meta-data
             android:name="unity.build-id"
-            android:value="67228038-fa93-4013-94c3-71580e485f51" />
+            android:value="75483fd4-f9c9-4da5-a0dc-671d8d4693e4" />
     </application>
 
 </manifest>

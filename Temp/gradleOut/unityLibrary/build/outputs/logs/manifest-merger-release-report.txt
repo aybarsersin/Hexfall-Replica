@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-23:12
-INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-23:12
-INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-23:12
-INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-23:12
-INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-23:12
-INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-23:12
-INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-23:12
+ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-22:12
+INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-22:12
+INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-22:12
+INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-22:12
+INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-22:12
+INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-22:12
+INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-22:12
 	package
 		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:70-98
 		INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml
 		INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml
-		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-23:12
+		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-22:12
 		INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:99-145
 	android:versionCode
 		INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml
-		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-23:12
+		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:1-22:12
 		INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:3:11-69
@@ -85,34 +85,28 @@ ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOu
 		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:16:46-98
 	android:name
 		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:16:16-45
-uses-feature#0x00030000
+uses-feature#0x00020000
 ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:18:3-52
 	android:glEsVersion
 		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:18:17-49
-uses-feature#android.hardware.vulkan.version
-ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:19:3-91
-	android:required
-		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:19:64-88
-	android:name
-		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:19:17-63
 uses-feature#android.hardware.touchscreen
-ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:20:3-88
+ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:19:3-88
 	android:required
-		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:20:61-85
+		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:19:61-85
 	android:name
-		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:20:17-60
+		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:19:17-60
 uses-feature#android.hardware.touchscreen.multitouch
-ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:21:3-99
+ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:20:3-99
 	android:required
-		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:21:72-96
+		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:20:72-96
 	android:name
-		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:21:17-71
+		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:20:17-71
 uses-feature#android.hardware.touchscreen.multitouch.distinct
-ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:22:3-108
+ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:21:3-108
 	android:required
-		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:22:81-105
+		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:21:81-105
 	android:name
-		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:22:17-80
+		ADDED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:21:17-80
 uses-sdk
 INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from A:\281019_format\020420_Desktop\Vertigo\Hexfall-Replica\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml

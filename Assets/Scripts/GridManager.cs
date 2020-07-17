@@ -139,11 +139,8 @@ public class GridManager : ConstantClass
 
     public bool ReadyForInput() // burayı kontrol edicez input almazsa.
     {
-        if (hexagonCreationStatus == false && hexagonRotateStatus == false && hexagonScoringStatus == false && gameOver == false)
-        {
-            return true;
-        }
-        return false;
+        return !hexagonCreationStatus && !hexagonRotateStatus && !hexagonScoringStatus && gameOver;
+        
     }
 
     private float CoordinateXOfFirstColumn()

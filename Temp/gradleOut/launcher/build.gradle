@@ -18,7 +18,7 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
-        applicationId 'com.DefaultCompany.HexfallDemo'
+        applicationId 'com.DefaultCompany.HexagonAybars'
         ndk {
             abiFilters 'armeabi-v7a'
         }

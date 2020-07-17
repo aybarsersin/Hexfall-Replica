@@ -1,4 +1,4 @@
-com.DefaultCompany.HexfallDemo
+com.DefaultCompany.HexagonAybars
 id unitySurfaceView
 mipmap app_icon
 mipmap app_icon_round
