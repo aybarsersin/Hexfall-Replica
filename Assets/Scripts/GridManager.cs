@@ -51,6 +51,7 @@ public class GridManager : ConstantClass
     {
         bombsAway = true;
     }
+
     public int GettingGridWidth()
     {
         return gridWidth;
@@ -100,9 +101,7 @@ public class GridManager : ConstantClass
         for (int n = 0; n < GettingGridWidth(); n++)
         {
             for (int m = 0; m < GettingGridHeight(); m++)
-            {
                 minusCells.Add(n);
-            }
             gameGrid.Add(new List<HexagonTile>());
         }
 
@@ -130,13 +129,13 @@ public class GridManager : ConstantClass
     {
         DestroyOutline();
         StartCoroutine(RotationCoroutine(CW));
-    } 
+    }
 
     public bool OnColumn(int n)
     {
         int middleColumnIndex = GettingGridWidth() / _half;
         return (middleColumnIndex % 2 == n % 2);
-    } 
+    }
 
     public bool ReadyForInput() // burayı kontrol edicez input almazsa.
     {
@@ -145,7 +144,7 @@ public class GridManager : ConstantClass
             return true;
         }
         return false;
-    } 
+    }
 
     private float CoordinateXOfFirstColumn()
     {
@@ -160,7 +159,7 @@ public class GridManager : ConstantClass
         }
 
         return false;
-    } 
+    }
 
     private IEnumerator CreateHexagons(List<int> columns, List<List<Color>> colourSeed = null)
     {
@@ -207,7 +206,7 @@ public class GridManager : ConstantClass
         }
 
         hexagonCreationStatus = false;
-    } 
+    }
 
     private List<List<Color>> CreateGridWithColour() //burayı da kontrol et!
     {
@@ -237,7 +236,7 @@ public class GridManager : ConstantClass
         }
 
         return colour;
-    } 
+    }
 
     private void FindHexagonTrio()
     {
@@ -284,7 +283,7 @@ public class GridManager : ConstantClass
             }
 
         } while (breakTheLoop);
-    } 
+    }
 
     private void DestroyOutline()
     {
@@ -295,7 +294,7 @@ public class GridManager : ConstantClass
                 Destroy(child.gameObject);
             }
         }
-    } 
+    }
 
     private void CreateOutline()
     {
@@ -322,7 +321,7 @@ public class GridManager : ConstantClass
             innerOutline.transform.localScale = obj.transform.localScale;
             innerOutline.transform.parent = outline.transform;
         }
-    } 
+    }
 
     private void TurnHexagons(bool CW)
     {
@@ -369,7 +368,7 @@ public class GridManager : ConstantClass
             third.Rotate(x2, y2, position2);
             gameGrid[x2][y2] = third;
         }
-    } 
+    }
 
     private List<HexagonTile> CheckScoringHexagons(List<List<HexagonTile>> checkList)
     {
@@ -440,7 +439,7 @@ public class GridManager : ConstantClass
             }
         }
         return scoringHexagonsList;
-    } 
+    }
 
     private List<int> ScoreHexagons(List<HexagonTile> list)
     {
@@ -489,12 +488,12 @@ public class GridManager : ConstantClass
 
         hexagonScoringStatus = false;
         return minusColumns;
-    } 
+    }
 
     private float GettingGridStartCoordinateX()
     {
         return gridWidth / _half * -_horizontalHexagonDistance;
-    } 
+    }
 
     private IEnumerator RotationCoroutine(bool CW)
     {

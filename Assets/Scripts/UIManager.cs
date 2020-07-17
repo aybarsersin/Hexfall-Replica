@@ -127,7 +127,7 @@ public class UIManager : ConstantClass
     public void StartGame() //renk seçtirme burada yapılacak.
     {
         settingsScreen.SetActive(false);
-        GridManagerObject.SettingGridWidth((int)gridWidthSlider.value);
+        GridManagerObject.SettingGridWidth((int)(gridWidthSlider.value-_minGridWidth)*_double + _minGridWidth);
         GridManagerObject.SettingGridHeight((int)gridHeightSlider.value);
         GridManagerObject.SettingColourBlindMode(colourblindDropdown.value != _zero); // buna da bi bak derim.
 

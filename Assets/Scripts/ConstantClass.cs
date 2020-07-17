@@ -8,20 +8,20 @@ public class ConstantClass : MonoBehaviour
     protected const int _double = 2;
     protected const int _half = 2;
     protected const int _minGridWidth = 5;
-    protected const int _factoryGridWidth = 5;
+    protected const int _factoryGridWidth = 7;
     protected const int _factoryGridHeight = 8;
     protected const int _factoryColourCount = 5;
     protected const int _selectionStatusCount = 6;
     protected const int _hexagonRotateSlideDistance = 5;
     protected const int _constantHexagonRotate = 9;
     protected const int _constantScore = 5;
-    protected const int _seed = 76142;
+    protected const int _seed = 75486;
     protected const int _constantBombTimer = 6;
     protected const int _verticalGridOffset = -3;
     protected const int _bombScoreLimit = 1000;
 
-    protected const float _verticalHexagonDistance = 0.445f;
-    protected const float _horizontalHexagonDistance = 0.23f;
+    protected const float _horizontalHexagonDistance = 0.445f;
+    protected const float _verticalHexagonDistance = 0.23f;
     protected const float _hexagonRotationLimit = 0.05f;
     protected const float _hexagonSendDelay = 0.025f;
 
