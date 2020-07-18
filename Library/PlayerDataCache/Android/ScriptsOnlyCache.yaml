@@ -510,7 +510,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: f3080d756bf0de4de4cc97c4a8c2f675
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UserInputManager
@@ -632,4 +632,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/Aybars/Desktop/apk test/test V0.3.apk
+  playerPath: C:/Users/Aybars/Desktop/apk test/test V0.3.7.apk

@@ -30,9 +30,12 @@
                 {
                     "source": "A:\\281019_format\\020420_Desktop\\Vertigo\\Hexfall-Replica\\Temp\\gradleOut\\launcher\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "-1,-1,-1",
-                        "startColumns": "-1,-1,-1",
-                        "startOffsets": "-1,-1,-1"
+                        "startLines": "5,2,7",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "190,53,288",
+                        "endLines": "6,4,10",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "286,188,513"
                     },
                     "to": {
                         "startLines": "5,7,10",
@@ -46,9 +49,11 @@
                 {
                     "source": "A:\\281019_format\\020420_Desktop\\Vertigo\\Hexfall-Replica\\Temp\\gradleOut\\launcher\\src\\main\\res\\values\\ids.xml",
                     "from": {
-                        "startLines": "-1",
-                        "startColumns": "-1",
-                        "startOffsets": "-1"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "46",
+                        "endOffsets": "97"
                     },
                     "to": {
                         "startLines": "2",
@@ -61,11 +66,11 @@
                 {
                     "source": "A:\\281019_format\\020420_Desktop\\Vertigo\\Hexfall-Replica\\Temp\\gradleOut\\launcher\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "2,-1",
-                        "startColumns": "2,-1",
-                        "startOffsets": "55,-1",
-                        "endColumns": "48,-1",
-                        "endOffsets": "101,-1"
+                        "startLines": "2,3",
+                        "startColumns": "2,2",
+                        "startOffsets": "55,105",
+                        "endColumns": "48,65",
+                        "endOffsets": "101,168"
                     },
                     "to": {
                         "startLines": "3,4",

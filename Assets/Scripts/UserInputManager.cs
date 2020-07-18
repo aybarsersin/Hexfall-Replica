@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class UserInputManager : ConstantClass
 {
-
     private bool validTouch;
     private GridManager GridManagerObject;
     private Vector2 touchStartCoordinates;
     private HexagonTile selectecHexagonTile;
+
+    [SerializeField] Text scoreText1;
+    [SerializeField] Text scoreText2;
+    [SerializeField] Text scoreText3;
+    [SerializeField] Text scoreText4;
 
     void Start()
     {
@@ -17,6 +22,7 @@ public class UserInputManager : ConstantClass
     {
         if (GridManagerObject.ReadyForInput() && Input.touchCount > _zero)
         {
+
             Vector3 worldPositionOfTouch = Camera.main.ScreenToWorldPoint(Input.GetTouch(_zero).position);
             Vector2 touchPosition = new Vector2(worldPositionOfTouch.x, worldPositionOfTouch.y);
             Collider2D collider = Physics2D.OverlapPoint(touchPosition);
@@ -41,8 +47,11 @@ public class UserInputManager : ConstantClass
     {
         if (collider != null && collider.transform.tag == _hexagon)
         {
-            if (Input.GetTouch(_zero).phase == TouchPhase.Ended && validTouch)
+            scoreText1.text = Input.GetTouch(_zero).phase.ToString();
+            scoreText3.text = TouchPhase.Ended.ToString();
+            if (Input.GetTouch(_zero).phase == TouchPhase.Ended && validTouch) //burda sıkıntı var
             {
+                scoreText2.text = "girdi 2";
                 validTouch = false;
                 GridManagerObject.SelectHexagonTrio(collider);
             }

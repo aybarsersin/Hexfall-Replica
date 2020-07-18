@@ -102,6 +102,7 @@ public class GridManager : ConstantClass
         {
             for (int m = 0; m < GettingGridHeight(); m++)
                 minusCells.Add(n);
+
             gameGrid.Add(new List<HexagonTile>());
         }
 
@@ -115,6 +116,7 @@ public class GridManager : ConstantClass
             selectedHexagonTile = collider.gameObject.GetComponent<HexagonTile>();
             selectedCoordinates.x = selectedHexagonTile.GettingHexagonX();
             selectedCoordinates.y = selectedHexagonTile.GettingHexagonY();
+            selectionStatus = 0;
         }
         else
         {
@@ -139,8 +141,7 @@ public class GridManager : ConstantClass
 
     public bool ReadyForInput() // burayı kontrol edicez input almazsa.
     {
-        return !hexagonCreationStatus && !hexagonRotateStatus && !hexagonScoringStatus && gameOver;
-        
+        return !hexagonCreationStatus && !hexagonRotateStatus && !hexagonScoringStatus && !gameOver;
     }
 
     private float CoordinateXOfFirstColumn()
@@ -150,12 +151,7 @@ public class GridManager : ConstantClass
 
     private bool IsPositionGameGridValid(Vector2 position)
     {
-        if (position.x >= _zero && position.y >= _zero && position.x < GettingGridWidth() && position.y < GettingGridWidth())
-        {
-            return true;
-        }
-
-        return false;
+        return position.x >= _zero && position.x < GettingGridWidth() && position.y >= _zero && position.y < GettingGridHeight();
     }
 
     private IEnumerator CreateHexagons(List<int> columns, List<List<Color>> colourSeed = null)
@@ -265,9 +261,7 @@ public class GridManager : ConstantClass
                 case 3: first = neighbours.down; second = neighbours.downLeft; break;
                 case 4: first = neighbours.downLeft; second = neighbours.upLeft; break;
                 case 5: first = neighbours.upLeft; second = neighbours.up; break;
-                default:
-                    first = Vector2.zero; second = Vector2.zero;
-                    break;
+                default: first = Vector2.zero; second = Vector2.zero; break;
             }
 
             if (first.x < _zero || first.x >= gridWidth || first.y < _zero || first.y >= gridHeight || second.x < _zero || second.x >= gridWidth || second.y < _zero || second.y >= gridHeight)
