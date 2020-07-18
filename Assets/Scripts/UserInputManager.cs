@@ -47,9 +47,7 @@ public class UserInputManager : ConstantClass
     {
         if (collider != null && collider.transform.tag == _hexagon)
         {
-            scoreText1.text = Input.GetTouch(_zero).phase.ToString();
-            scoreText3.text = TouchPhase.Ended.ToString();
-            if (Input.GetTouch(_zero).phase == TouchPhase.Ended && validTouch) //burda sıkıntı var
+            if (Input.GetTouch(_zero).phase == TouchPhase.Ended && validTouch) //burda sıkıntı var Input.GetTouch(_zero).phase parmağı kaldırmama rağmen stationary olarak kalıyor bu bu yüzden ended fazına asla girmiyor.
             {
                 scoreText2.text = "girdi 2";
                 validTouch = false;

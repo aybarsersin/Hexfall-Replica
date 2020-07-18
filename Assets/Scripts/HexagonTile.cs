@@ -9,7 +9,7 @@ public class HexagonTile : ConstantClass
     public Vector2 linearInterpolationCoordinate;
     public bool linearInterpolation;
     public Vector2 velocity;
-    public bool bombHexagon;
+    private bool bombHexagon;
     private int bombHexagonTimer;
     private TextMesh text;
 
@@ -21,7 +21,30 @@ public class HexagonTile : ConstantClass
         public Vector2 downLeft;
         public Vector2 upRight;
         public Vector2 downRight;
-    } 
+    }
+
+    void Start()
+    {
+        GridManagerObject = GridManager.instance;
+        linearInterpolation = false;
+    }
+
+    void Update()
+    {
+        if (linearInterpolation)
+        {
+            float newX = Mathf.Lerp(transform.position.x, linearInterpolationCoordinate.x, Time.deltaTime * _constantHexagonRotate);
+            float newY = Mathf.Lerp(transform.position.y, linearInterpolationCoordinate.y, Time.deltaTime * _constantHexagonRotate);
+
+            transform.position = new Vector2(newX, newY);
+
+            if (Vector3.Distance(transform.position, linearInterpolationCoordinate) < _hexagonRotationLimit)
+            {
+                transform.position = linearInterpolationCoordinate;
+                linearInterpolation = false;
+            }
+        }
+    }
 
     public void SettingHexagonX(int value)
     {
@@ -65,29 +88,6 @@ public class HexagonTile : ConstantClass
         return GetComponent<SpriteRenderer>().color;
     }
 
-    void Start()
-    {
-        GridManagerObject = GridManager.instance;
-        linearInterpolation = false;
-    }
-
-    void Update()
-    {
-        if (linearInterpolation)
-        {
-            float newX = Mathf.Lerp(transform.position.x, linearInterpolationCoordinate.x, Time.deltaTime * _constantHexagonRotate);
-            float newY = Mathf.Lerp(transform.position.y, linearInterpolationCoordinate.y, Time.deltaTime * _constantHexagonRotate);
-
-            transform.position = new Vector2(newX, newY);
-
-            if (Vector3.Distance(transform.position, linearInterpolationCoordinate) < _hexagonRotationLimit)
-            {
-                transform.position = linearInterpolationCoordinate;
-                linearInterpolation = false;
-            }
-        }
-    }
-
     public void Rotate(int newX, int newY, Vector2 newCoordinates)
     {
         linearInterpolationCoordinate = newCoordinates;
@@ -116,12 +116,12 @@ public class HexagonTile : ConstantClass
         NeighbouringHexagons neighbouringHexagons;
         bool onColumn = GridManagerObject.OnColumn(GettingHexagonX());
 
-        neighbouringHexagons.up = new Vector2(coordinateX, coordinateY - 1);
-        neighbouringHexagons.down = new Vector2(coordinateX, coordinateY + 1);
+        neighbouringHexagons.up = new Vector2(coordinateX, coordinateY + 1);
+        neighbouringHexagons.down = new Vector2(coordinateX, coordinateY - 1);
         neighbouringHexagons.upLeft = new Vector2(coordinateX - 1, onColumn ? coordinateY + 1 : coordinateY);
         neighbouringHexagons.upRight = new Vector2(coordinateX + 1, onColumn ? coordinateY + 1 : coordinateY);
         neighbouringHexagons.downLeft = new Vector2(coordinateX - 1, onColumn ? coordinateY : coordinateY - 1);
-        neighbouringHexagons.downRight = new Vector2(coordinateX - 1, onColumn ? coordinateY : coordinateY - 1);
+        neighbouringHexagons.downRight = new Vector2(coordinateX + 1, onColumn ? coordinateY : coordinateY - 1);
 
         return neighbouringHexagons;
     }

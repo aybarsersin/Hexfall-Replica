@@ -205,7 +205,7 @@ public class GridManager : ConstantClass
     {
         List<List<Color>> colour = new List<List<Color>>();
         List<Color> checkColourList = new List<Color>();
-        bool exit;
+        bool exit = true;
 
         for (int n = 0; n < GettingGridWidth(); n++)
         {
@@ -273,7 +273,7 @@ public class GridManager : ConstantClass
                 breakTheLoop = true;
             }
 
-        } while (breakTheLoop);
+        } while (!breakTheLoop);
     }
 
     private void DestroyOutline()
@@ -325,12 +325,11 @@ public class GridManager : ConstantClass
         third = selectedTrio[2];
 
         x1 = first.GettingHexagonX();
-        y1 = first.GettingHexagonY();
-
         x2 = second.GettingHexagonX();
-        y2 = second.GettingHexagonY();
-
         x3 = third.GettingHexagonX();
+
+        y1 = first.GettingHexagonY();
+        y2 = second.GettingHexagonY();
         y3 = third.GettingHexagonY();
 
         position1 = first.transform.position;
@@ -353,7 +352,7 @@ public class GridManager : ConstantClass
             first.Rotate(x3, y3, position3);
             gameGrid[x3][y3] = first;
 
-            second.Rotate(x1, y1, position3);
+            second.Rotate(x1, y1, position1);
             gameGrid[x1][y1] = second;
 
             third.Rotate(x2, y2, position2);
@@ -365,39 +364,39 @@ public class GridManager : ConstantClass
     {
         List<HexagonTile> neighbouringHexagonsList = new List<HexagonTile>();
         List<HexagonTile> scoringHexagonsList = new List<HexagonTile>();
-        HexagonTile hexagon;
-        HexagonTile.NeighbouringHexagons neighbouringHexagons;
-        Color colour;
+        HexagonTile currentHexagon;
+        HexagonTile.NeighbouringHexagons currentNeighbouringHexagons;
+        Color currentColour;
 
         for (int n = 0; n < checkList.Count; n++)
         {
             for (int m = 0; m < checkList[n].Count; m++)
             {
-                hexagon = checkList[n][m];
-                colour = hexagon.GettingHexagonColour();
-                neighbouringHexagons = hexagon.GetNeighbouringHexagons();
+                currentHexagon = checkList[n][m];
+                currentColour = currentHexagon.GettingHexagonColour();
+                currentNeighbouringHexagons = currentHexagon.GetNeighbouringHexagons();
 
-                if (IsPositionGameGridValid(neighbouringHexagons.up))
+                if (IsPositionGameGridValid(currentNeighbouringHexagons.up)) // if yapısı değişebilir.
                 {
-                    neighbouringHexagonsList.Add(gameGrid[(int)neighbouringHexagons.up.x][(int)neighbouringHexagons.up.y]);
+                    neighbouringHexagonsList.Add(gameGrid[(int)currentNeighbouringHexagons.up.x][(int)currentNeighbouringHexagons.up.y]);
                 }
                 else
                 {
                     neighbouringHexagonsList.Add(null);
                 }
 
-                if (IsPositionGameGridValid(neighbouringHexagons.upRight))
+                if (IsPositionGameGridValid(currentNeighbouringHexagons.upRight))
                 {
-                    neighbouringHexagonsList.Add(gameGrid[(int)neighbouringHexagons.upRight.x][(int)neighbouringHexagons.upRight.y]);
+                    neighbouringHexagonsList.Add(gameGrid[(int)currentNeighbouringHexagons.upRight.x][(int)currentNeighbouringHexagons.upRight.y]);
                 }
                 else
                 {
                     neighbouringHexagonsList.Add(null);
                 }
 
-                if (IsPositionGameGridValid(neighbouringHexagons.downRight))
+                if (IsPositionGameGridValid(currentNeighbouringHexagons.downRight))
                 {
-                    neighbouringHexagonsList.Add(gameGrid[(int)neighbouringHexagons.downRight.x][(int)neighbouringHexagons.downRight.y]);
+                    neighbouringHexagonsList.Add(gameGrid[(int)currentNeighbouringHexagons.downRight.x][(int)currentNeighbouringHexagons.downRight.y]);
                 }
                 else
                 {
@@ -408,7 +407,7 @@ public class GridManager : ConstantClass
                 {
                     if (neighbouringHexagonsList[l] != null && neighbouringHexagonsList[l + 1] != null)
                     {
-                        if (neighbouringHexagonsList[l].GettingHexagonColour() == colour && neighbouringHexagonsList[l + 1].GettingHexagonColour() == colour)
+                        if (neighbouringHexagonsList[l].GettingHexagonColour() == currentColour && neighbouringHexagonsList[l + 1].GettingHexagonColour() == currentColour)
                         {
                             if (!scoringHexagonsList.Contains(neighbouringHexagonsList[l]))
                             {
@@ -418,9 +417,9 @@ public class GridManager : ConstantClass
                             {
                                 scoringHexagonsList.Add(neighbouringHexagonsList[l + 1]);
                             }
-                            if (!scoringHexagonsList.Contains(hexagon))
+                            if (!scoringHexagonsList.Contains(currentHexagon))
                             {
-                                scoringHexagonsList.Add(hexagon);
+                                scoringHexagonsList.Add(currentHexagon);
                             }
                         }
                     }
@@ -471,9 +470,9 @@ public class GridManager : ConstantClass
             {
                 coordinateX = GettingGridStartCoordinateX() + (_horizontalHexagonDistance * n);
                 coordinateY = (_verticalHexagonDistance * m * _double) + _verticalGridOffset + (OnColumn(n) ? _verticalHexagonDistance : _zero);
-                gameGrid[n][m].SettingHexagonX(n);
                 gameGrid[n][m].SettingHexagonY(m);
-                gameGrid[n][m].AlterHexagonGridPosition(new Vector3(coordinateX, coordinateY, _zero));
+                gameGrid[n][m].SettingHexagonX(n);
+                gameGrid[n][m].AlterWorldPosition(new Vector3(coordinateX, coordinateY, _zero));
             }
         }
 
@@ -523,6 +522,10 @@ public class GridManager : ConstantClass
 
             yield return new WaitForSeconds(0.3f);
         }
+
+        hexagonScoringStatus = false;
+        FindHexagonTrio();
+        CreateOutline();
 
     }
 
