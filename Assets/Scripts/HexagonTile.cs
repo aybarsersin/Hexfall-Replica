@@ -101,7 +101,7 @@ public class HexagonTile : ConstantClass
         return linearInterpolation;
     }
 
-    public bool IsHexagonMoving() // burada bir değişiklik gerekebilir kontrol et! stopped olarak ! olmadan alınabilir mi ?
+    public bool IsHexagonMoving()
     {
         return !(GetComponent<Rigidbody2D>().velocity == Vector2.zero);
     }

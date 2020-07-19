@@ -15,7 +15,6 @@ public class GridManager : ConstantClass
     private int gridHeight;
     private int gridWidth;
     private int selectionStatus;
-    private bool colourBlindMode;
     private bool bombsAway;
     private bool gameOver;
 
@@ -39,10 +38,6 @@ public class GridManager : ConstantClass
     {
         gridHeight = height;
     }
-    public void SettingColourBlindMode(bool mode)
-    {
-        colourBlindMode = mode;
-    }
     public void SettingColourList(List<Color> colors)
     {
         colourList = colors;
@@ -59,10 +54,6 @@ public class GridManager : ConstantClass
     public int GettingGridHeight()
     {
         return gridHeight;
-    }
-    public bool GettingColourBlindMode()
-    {
-        return colourBlindMode;
     }
     public HexagonTile GettingSelectedHexagonTile()
     {
@@ -139,7 +130,7 @@ public class GridManager : ConstantClass
         return (middleColumnIndex % 2 == n % 2);
     }
 
-    public bool ReadyForInput() // burayı kontrol edicez input almazsa.
+    public bool ReadyForInput()
     {
         return !hexagonCreationStatus && !hexagonRotateStatus && !hexagonScoringStatus && !gameOver;
     }
@@ -201,7 +192,7 @@ public class GridManager : ConstantClass
         hexagonCreationStatus = false;
     }
 
-    private List<List<Color>> CreateGridWithColour() //burayı da kontrol et!
+    private List<List<Color>> CreateGridWithColour()
     {
         List<List<Color>> colour = new List<List<Color>>();
         List<Color> checkColourList = new List<Color>();
@@ -529,24 +520,4 @@ public class GridManager : ConstantClass
 
     }
 
-    private void PrintGameGrid() // gerekli mi değil mi ?
-    {
-        string map = "";
-
-
-        for (int i = GettingGridHeight() - 1; i >= 0; --i)
-        {
-            for (int j = 0; j < GettingGridWidth(); ++j)
-            {
-                if (gameGrid[j][i] == null)
-                    map += "0 - ";
-                else
-                    map += "1 - ";
-            }
-
-            map += "\n";
-        }
-
-        print(map);
-    }
 }

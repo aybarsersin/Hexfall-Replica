@@ -4,7 +4,7 @@
     package="com.DefaultCompany.HexagonAybars"
     android:installLocation="preferExternal"
     android:versionCode="1"
-    android:versionName="0.1" >
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -63,7 +63,7 @@
             android:value="portrait|landscape" />
         <meta-data
             android:name="unity.build-id"
-            android:value="6fe8ae8c-3b21-4c89-b78b-a93eff3e1a8f" />
+            android:value="5fff4d76-5f48-4ac7-b124-220d7e597a1e" />
     </application>
 
 </manifest>

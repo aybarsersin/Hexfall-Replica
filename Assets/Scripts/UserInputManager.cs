@@ -8,11 +8,6 @@ public class UserInputManager : ConstantClass
     private Vector2 touchStartCoordinates;
     private HexagonTile selectecHexagonTile;
 
-    [SerializeField] Text scoreText1;
-    [SerializeField] Text scoreText2;
-    [SerializeField] Text scoreText3;
-    [SerializeField] Text scoreText4;
-
     void Start()
     {
         GridManagerObject = GridManager.instance;
@@ -47,9 +42,8 @@ public class UserInputManager : ConstantClass
     {
         if (collider != null && collider.transform.tag == _hexagon)
         {
-            if (Input.GetTouch(_zero).phase == TouchPhase.Ended && validTouch) //burda sıkıntı var Input.GetTouch(_zero).phase parmağı kaldırmama rağmen stationary olarak kalıyor bu bu yüzden ended fazına asla girmiyor.
+            if (Input.GetTouch(_zero).phase == TouchPhase.Ended && validTouch) 
             {
-                scoreText2.text = "girdi 2";
                 validTouch = false;
                 GridManagerObject.SelectHexagonTrio(collider);
             }
