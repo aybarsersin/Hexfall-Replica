@@ -17,18 +17,20 @@ public class UserInputManager : ConstantClass
     {
         if (GridManagerObject.ReadyForInput() && Input.touchCount > _zero)
         {
-
+            //dokunulan gameObject'in collider'ını değişkene atar.
             Vector3 worldPositionOfTouch = Camera.main.ScreenToWorldPoint(Input.GetTouch(_zero).position);
             Vector2 touchPosition = new Vector2(worldPositionOfTouch.x, worldPositionOfTouch.y);
             Collider2D collider = Physics2D.OverlapPoint(touchPosition);
             selectecHexagonTile = GridManagerObject.GettingSelectedHexagonTile();
 
+            //Input işleme kısmı.
             DetectingTouch();
             IsHexagonTrioSelected(collider);
             DetectingRotation();
         }
     }
 
+    //Dokunma algılama.
     private void DetectingTouch()
     {
         if (Input.GetTouch(_zero).phase == TouchPhase.Began)
@@ -38,6 +40,7 @@ public class UserInputManager : ConstantClass
         }
     }
 
+    //seçimin doğruluğunu kontrol edip hexagon üçlüsünü seçecek olan methodu gridmanager üzerinden çağırır.
     private void IsHexagonTrioSelected(Collider2D collider)
     {
         if (collider != null && collider.transform.tag == _hexagon)
@@ -50,6 +53,7 @@ public class UserInputManager : ConstantClass
         }
     }
 
+    //rotasyon koşullarını kontrol edip gridmanager üzerinden rotasyon methodunu çağırır.
     private void DetectingRotation()
     {
         if (Input.GetTouch(_zero).phase == TouchPhase.Moved && validTouch)
@@ -58,6 +62,7 @@ public class UserInputManager : ConstantClass
             float distX = afterTouchCoordinates.x - touchStartCoordinates.x;
             float distY = afterTouchCoordinates.y - touchStartCoordinates.y;
 
+            //dokunma başlangıç ve bitiş koordinatları üzerinden rotasyon tetiklenmesini kontrol eder.
             if ((Mathf.Abs(distX) > _hexagonRotateSlideDistance || Mathf.Abs(distY) > _hexagonRotateSlideDistance) && selectecHexagonTile != null)
             {
                 Vector3 screenPosition = Camera.main.WorldToScreenPoint(selectecHexagonTile.transform.position);

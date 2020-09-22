@@ -13,6 +13,7 @@ public class HexagonTile : ConstantClass
     private int bombHexagonTimer;
     private TextMesh text;
 
+    // komşu hegzagonların grid kordinatlarını tutan struct
     public struct NeighbouringHexagons
     {
         public Vector2 up;
@@ -31,6 +32,7 @@ public class HexagonTile : ConstantClass
 
     void Update()
     {
+        //burası anlaşılmadı.
         if (linearInterpolation)
         {
             float newX = Mathf.Lerp(transform.position.x, linearInterpolationCoordinate.x, Time.deltaTime * _constantHexagonRotate);
@@ -88,6 +90,7 @@ public class HexagonTile : ConstantClass
         return GetComponent<SpriteRenderer>().color;
     }
 
+    // rotasyon fonksiyonu
     public void Rotate(int newX, int newY, Vector2 newCoordinates)
     {
         linearInterpolationCoordinate = newCoordinates;
@@ -96,6 +99,7 @@ public class HexagonTile : ConstantClass
         linearInterpolation = true;
     }
 
+    // rotasyonun bitişini kontrol eden fonksiyon
     public bool IsHexagonRotating()
     {
         return linearInterpolation;
@@ -111,6 +115,7 @@ public class HexagonTile : ConstantClass
         GetComponent<Collider2D>().isTrigger = true;
     }
 
+    //komşu hexagonları pozisyonlarıyla liste olarak geri döndürür.
     public NeighbouringHexagons GetNeighbouringHexagons()
     {
         NeighbouringHexagons neighbouringHexagons;
@@ -126,12 +131,14 @@ public class HexagonTile : ConstantClass
         return neighbouringHexagons;
     }
 
+    //hexagonların yeni dünya pozisyonlarını set eder.
     public void AlterWorldPosition(Vector2 newCoordinate)
     {
         linearInterpolationCoordinate = newCoordinate;
         linearInterpolation = true;
     }
 
+    //hexagonların yeni grid pozisyonlarını set eder.
     public void AlterHexagonGridPosition(Vector2 newCoordinate)
     {
         coordinateX = (int)newCoordinate.x;

@@ -130,7 +130,7 @@ public class UIManager : ConstantClass
         if (Int32.Parse(scoreText.text) >= _bombScoreLimit * bombHexagonsCount + _bombScoreLimit)
         {
 			++bombHexagonsCount;
-			GridManagerObject.SettingBombsAway();
+			GridManagerObject.SettingBombsAway(); // verim sorunu mevcut score kontrolü method çağırmadan burada yapılabilirdi eğer score uygun ise method çağrılabilirdi.
         }
     }
 
